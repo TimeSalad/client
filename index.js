@@ -5,5 +5,5 @@ import Config from 'react-native-config';
 import StorybookUIRoot from './storybook';
 
 AppRegistry.registerComponent(appName, () =>
-  Config.LOAD_STORYBOOK ? App : StorybookUIRoot,
+  Config.LOAD_STORYBOOK ? StorybookUIRoot : App,
 );
