@@ -1,6 +1,6 @@
 import React from 'react';
-import {useState} from 'react';
-import {StyleSheet, View, TextInput, Text} from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, View, TextInput, Text } from 'react-native';
 
 interface Props {
   title: string;
@@ -8,7 +8,7 @@ interface Props {
   text?: string;
 }
 
-const AddHistoryItem = ({title, hint, text}: Props) => {
+const AddHistoryItem = ({ title, hint, text }: Props) => {
   const [input, onChangeInput] = useState(text);
   return (
     <View style={styles.block}>
@@ -18,19 +18,29 @@ const AddHistoryItem = ({title, hint, text}: Props) => {
         onChangeText={onChangeInput}
         style={styles.input}
         placeholder={hint}
+        multiline={true}
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  // Todo : 스타일 설정
   block: {
-    paddingTop: 8,
-    paddingBottom: 16,
+    display: 'flex',
+    width: '100%',
+    flex: 1,
+    flexDirection: 'row',
+    padding: 20,
   },
-  title: {},
-  input: {},
+  title: {
+    width: 100,
+    height: 40,
+    paddingTop: 13,
+  },
+  input: {
+    height: 40,
+    paddingTop: 12,
+  },
 });
 
 export default AddHistoryItem;
