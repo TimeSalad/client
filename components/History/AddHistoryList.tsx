@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import AddHistoryItem from './AddHistoryItem';
 
 interface Props {
@@ -6,9 +7,13 @@ interface Props {
 }
 
 const AddHistoryList = ({ contents }: Props) => {
-  return contents.map(item => (
-    <AddHistoryItem title={item.title} hint={item.hint} />
-  ));
+  return (
+    <View>
+      {contents.map(item => (
+        <AddHistoryItem title={item.title} hint={item.hint} />
+      ))}
+    </View>
+  );
 };
 
 export default AddHistoryList;
